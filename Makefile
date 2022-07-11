@@ -5,7 +5,7 @@ SHELL := /bin/bash
 DOCKER_NAME ?= uCore-RV-64-Base
 DIR := workplace
 
-test: test1 test2 test3 test4 test5 test6 test7 test8
+test: test1 test2
 
 lab1: test3
 
@@ -72,6 +72,18 @@ docker:
 	docker pull nzpznk/oslab-c-env
 	docker run -it --name ${DOCKER_NAME} ${DOCKER_IMAGE_NAME} /bin/bash
 
+download_lba:
+	sudo chmoud script/download_lab.sh
+	./script/download.sh
+
+setclassroom:
+	touch .github/.keep
+	mkdir -p .github/workflows
+	cp scripts/classroom.yml .github/workflows/classroom.yml
+	git add .github/workflows/classroom.yml
+	git add .github/.keep
+	git commit -m"update classroom.yml .keep for classroom CI test"
+	git push
 
 # for local ubuntu with zsh shell SHELL, need root for sudo 
 ubuntu_setenv:
