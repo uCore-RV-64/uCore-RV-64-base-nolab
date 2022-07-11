@@ -79,7 +79,7 @@ download_lba:
 setclassroom:
 	touch .github/.keep
 	mkdir -p .github/workflows
-	cp scripts/classroom.yml .github/workflows/classroom.yml
+	cp script/classroom.yml .github/workflows/classroom.yml
 	git add .github/workflows/classroom.yml
 	git add .github/.keep
 	git commit -m"update classroom.yml .keep for classroom CI test"
