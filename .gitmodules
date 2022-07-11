@@ -1,0 +1,3 @@
+[submodule "uCore-RV-64-test"]
+	path = uCore-RV-64-test
+	url = https://github.com/uCore-RV-64/uCore-RV-64-test.git
