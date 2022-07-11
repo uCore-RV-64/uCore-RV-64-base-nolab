@@ -73,8 +73,8 @@ docker:
 	docker run -it --name ${DOCKER_NAME} ${DOCKER_IMAGE_NAME} /bin/bash
 
 download_lba:
-	sudo chmoud script/download_lab.sh
-	./script/download.sh
+	sudo chmod +x script/download_lab.sh
+	./script/download_lab.sh
 
 setclassroom:
 	touch .github/.keep
